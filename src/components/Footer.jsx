@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+
 const Footer = () => {
   return (
     <footer className="w-full bg-[#f5f5f7] text-[#1d1d1f]/80 text-[11px] mt-10">
@@ -66,7 +67,6 @@ const Footer = () => {
             </ul>
           </motion.div>
 
-          
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -128,35 +128,37 @@ const Footer = () => {
 
         </div>
         
+        {/* क्रेडिट सेक्शन */}
         <div className="max-w-5xl mx-auto px-4 mt-8 pt-4 border-t border-slate-300/50 flex flex-col items-center justify-center gap-2">
           
           <p className="text-xs text-slate-500">
              Clone crafted for recruiters with ❤️ by
           </p>
 
-          
-          <motion.div
-            className="relative px-4 py-1.5 bg-black text-white rounded-full text-sm font-medium cursor-pointer shadow-sm overflow-hidden"
-            
-           
-            whileInView={{ scale: [0.9, 1.05, 1] }} 
-            viewport={{ once: true }} // सिर्फ एक बार एनिमेट होगा जब दिखेगा
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            
-           
-            whileHover={{ 
-              scale: 1.1,
-              boxShadow: "0px 0px 15px rgba(0, 113, 227, 0.7)",
-            }}
+          {/* सिंपल <a> टैग: क्लिक करने पर सीधे लिंक खुलेगा (जैसे आपका गिटहब या पोर्टफोलियो) */}
+          <a 
+            href="https://github.com" // यहाँ अपना या अपनी टीम का लिंक डाल दो भाई!
+            target="_blank"            // इससे लिंक नए टैब में खुलेगा
+            rel="noopener noreferrer" // सुरक्षा के लिए ज़रूरी
           >
-            
-            <motion.span
-              animate={{ opacity: [0.6, 1, 0.6] }}
-              transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+            <motion.div
+              className="relative px-4 py-1.5 bg-black text-white rounded-full text-sm font-medium cursor-pointer shadow-sm overflow-hidden"
+              whileInView={{ scale: [0.9, 1.05, 1] }} 
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              whileHover={{ 
+                scale: 1.1,
+                boxShadow: "0px 0px 15px rgba(0, 113, 227, 0.7)",
+              }}
             >
-              Veds Team
-            </motion.span>
-          </motion.div>
+              <motion.span
+                animate={{ opacity: [0.6, 1, 0.6] }}
+                transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+              >
+                Veds Team
+              </motion.span>
+            </motion.div>
+          </a>
 
         </div>
       </div>
