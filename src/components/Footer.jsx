@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { motion } from 'framer-motion'
 const Footer = () => {
   return (
     <footer className="w-full bg-[#f5f5f7] text-[#1d1d1f]/80 text-[11px] mt-10">
@@ -12,7 +12,13 @@ const Footer = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-5 gap-6 pb-6 items-start">
           
-          <div className="flex flex-col gap-3">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex flex-col gap-3"
+          >
             <h3 className="font-semibold text-black text-[12px]">Shop and Learn</h3>
             <ul className="space-y-2 text-[#1d1d1f]/70">
               <li><a href="#" className="hover:underline">Store</a></li>
@@ -21,9 +27,15 @@ const Footer = () => {
               <li><a href="#" className="hover:underline">iPhone</a></li>
               <li><a href="#" className="hover:underline">Watch</a></li>
             </ul>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col gap-3">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="flex flex-col gap-3"
+          >
             <h3 className="font-semibold text-black text-[12px]">Account</h3>
             <ul className="space-y-2 text-[#1d1d1f]/70">
               <li><a href="#" className="hover:underline">Manage Your Apple ID</a></li>
@@ -36,9 +48,15 @@ const Footer = () => {
               <li><a href="#" className="hover:underline">Apple TV+</a></li>
               <li><a href="#" className="hover:underline">Apple Music</a></li>
             </ul>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col gap-3">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="flex flex-col gap-3"
+          >
             <h3 className="font-semibold text-black text-[12px]">Apple Store</h3>
             <ul className="space-y-2 text-[#1d1d1f]/70">
               <li><a href="#" className="hover:underline">Find a Store</a></li>
@@ -46,10 +64,16 @@ const Footer = () => {
               <li><a href="#" className="hover:underline">Today at Apple</a></li>
               <li><a href="#" className="hover:underline">Apple Store App</a></li>
             </ul>
-          </div>
+          </motion.div>
 
           
-          <div className="flex flex-col gap-3">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="flex flex-col gap-3"
+          >
             <h3 className="font-semibold text-black text-[12px]">For Business</h3>
             <ul className="space-y-2 text-[#1d1d1f]/70">
               <li><a href="#" className="hover:underline">Apple and Business</a></li>
@@ -61,9 +85,15 @@ const Footer = () => {
               <li><a href="#" className="hover:underline">Environment</a></li>
               <li><a href="#" className="hover:underline">Privacy</a></li>
             </ul>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col gap-3">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="flex flex-col gap-3"
+          >
             <h3 className="font-semibold text-black text-[12px]">About Apple</h3>
             <ul className="space-y-2 text-[#1d1d1f]/70">
               <li><a href="#" className="hover:underline">Newsroom</a></li>
@@ -71,7 +101,7 @@ const Footer = () => {
               <li><a href="#" className="hover:underline">Career Opportunities</a></li>
               <li><a href="#" className="hover:underline">Investors</a></li>
             </ul>
-          </div>
+          </motion.div>
 
         </div>
 
@@ -97,7 +127,38 @@ const Footer = () => {
           </div>
 
         </div>
+        
+        <div className="max-w-5xl mx-auto px-4 mt-8 pt-4 border-t border-slate-300/50 flex flex-col items-center justify-center gap-2">
+          
+          <p className="text-xs text-slate-500">
+             Clone crafted for recruiters with ❤️ by
+          </p>
 
+          
+          <motion.div
+            className="relative px-4 py-1.5 bg-black text-white rounded-full text-sm font-medium cursor-pointer shadow-sm overflow-hidden"
+            
+           
+            whileInView={{ scale: [0.9, 1.05, 1] }} 
+            viewport={{ once: true }} // सिर्फ एक बार एनिमेट होगा जब दिखेगा
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            
+           
+            whileHover={{ 
+              scale: 1.1,
+              boxShadow: "0px 0px 15px rgba(0, 113, 227, 0.7)",
+            }}
+          >
+            
+            <motion.span
+              animate={{ opacity: [0.6, 1, 0.6] }}
+              transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+            >
+              Veds Team
+            </motion.span>
+          </motion.div>
+
+        </div>
       </div>
     </footer>
   )

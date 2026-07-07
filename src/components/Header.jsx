@@ -1,10 +1,16 @@
     import React from 'react'
     import { Search, ShoppingBag } from 'lucide-react'
+    import { motion } from 'framer-motion'
 
     const Header = () => {
     return (
         <>
-            <header className="w-full bg-[#f5f5f7]/80 backdrop-blur-md sticky top-0 z-50 mr-4">
+            <motion.header 
+                initial={{ y: -100 }}
+                animate={{ y: 0 }}
+                transition={{ type: "spring", stiffness: 100, damping: 20 }}
+                className="w-full bg-[#f5f5f7]/80 backdrop-blur-md sticky top-0 z-50 mr-4"
+            >
                 <div className="flex items-center justify-between max-w-5xl mx-auto px-4 py-2 ">
                     <div>
                         <img src="./Logo.png" alt="Apple Logo" className="h-7 w-auto ml-60" />
@@ -32,7 +38,7 @@
             <div className="bg-[#f5f5f7] text-center text-xs text-black/80 py-2 px-4">
                 Get up to 6 months of No Cost EMI* plus up to ₹10000 instant cashback‡ on selected products with eligible cards. Shop
             </div>
-    </header>        
+    </motion.header>        
         </>
     )
     }
