@@ -29,7 +29,9 @@
                         </div>
                     
                 </div>
-        
+            <div className="bg-[#f5f5f7] text-center text-xs text-black/80 py-2 px-4">
+                Get up to 6 months of No Cost EMI* plus up to ₹10000 instant cashback‡ on selected products with eligible cards. Shop
+            </div>
     </header>        
         </>
     )

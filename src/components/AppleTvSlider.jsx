@@ -3,7 +3,7 @@ import React from 'react'
 const AppleTvSlider = () => {
   return (
     <>
-<hr className="border-t-4 border-black" /><br />
+{/* <hr className="border-t-4 border-black" /><br /> */}
     <h1 className="text-6xl font-bold text-black text-center mb-6">Apple TV</h1>
       <div className="w-full bg-white pb-8">
         
